@@ -1,0 +1,28 @@
+###
+POST http://localhost:8888/addUser
+Content-Type: application/json
+
+{
+  "username": "11",
+  "password": "content",
+  "nickname": "11",
+  "type": "11"
+}
+
+###
+PUT http://localhost:8888/updateUser
+Content-Type: application/json
+
+{
+  "id": "11",
+  "username": "00",
+  "password": "00",
+  "nickname": "00",
+  "type": "00"
+}
+
+###
+DELETE http://localhost:8888/deleteUserById?id=7d338cc1-7bb2-4a1b-aa81-d9c2f2193be1
+
+
+
