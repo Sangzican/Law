@@ -15,7 +15,7 @@ public interface LawyerDao {
     @Insert("insert into lawyers value(#{id},#{lawyer_username},#{lawyer_password},#{name},#{age},#{gender},#{worktime},#{cases},#{descrip},#{free},#{casetype})")
     boolean addLawyer(Lawyer lawyer);
 
-    @Delete("delete from users where id=#{id}")
+    @Delete("delete from lawyers where id=#{id}")
     boolean deleteLawyerById(String id);
 
     @Select("select * from lawyers where lawyer_username=#{lawyer_username} and lawyer_password=#{lawyer_password}")

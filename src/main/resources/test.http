@@ -24,5 +24,47 @@ Content-Type: application/json
 ###
 DELETE http://localhost:8888/deleteUserById?id=7d338cc1-7bb2-4a1b-aa81-d9c2f2193be1
 
+###
+POST http://localhost:8888/lawyer/addLawyer
+Content-Type: application/json
+
+{
+  "id": "12",
+  "lawyer_username": "1",
+  "lawyer_password": "161",
+  "name": "1",
+  "age": "10",
+  "gender": "male",
+  "worktime": "15",
+  "cases": "10",
+  "descrip": "111",
+  "free": "true",
+  "casetype": "151"
+}
+
+###
+GET http://localhost:8888/lawyer/findAllLawyer
+Content-Type: application/json
+
+###
+PUT http://localhost:8888/lawyer/updateLawyer
+Content-Type: application/json
+
+{
+  "id": "1",
+  "lawyer_username": "11111",
+  "lawyer_password": "161",
+  "name": "11111",
+  "age": "10",
+  "gender": "male",
+  "worktime": "15",
+  "cases": "10",
+  "descrip": "111",
+  "free": "true",
+  "casetype": "151"
+}
+
+###
+DELETE http://localhost:8888/lawyer/deleteLawyerById?id=332dc9bd-ac9f-48fb-a50d-017804300230
 
 
