@@ -12,6 +12,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
+
     @Override
     public List<User> findAllUser() {
         return userDao.findAllUser();
@@ -29,7 +30,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User login(String username, String pasaword) {
-        return userDao.login(username,pasaword);
+        return userDao.login(username, pasaword);
     }
 
     @Override
