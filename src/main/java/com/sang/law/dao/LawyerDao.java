@@ -23,4 +23,7 @@ public interface LawyerDao {
 
     @Update("update lawyers set lawyer_username=#{lawyer_username},lawyer_password=#{lawyer_password},name=#{name},age=#{age},gender=#{gender},worktime=#{worktime},cases=#{cases},descrip=#{descrip},free=#{free},casetype=#{casetype} where id=#{id}")
     boolean updateLawyer(Lawyer lawyer);
+
+    @Select("select * from lawyers where id=#{id}")
+    Lawyer findLawyerById(String id);
 }

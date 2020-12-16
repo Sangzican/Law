@@ -3,13 +3,18 @@ package com.sang.law.controller;
 import com.sang.law.pojo.User;
 import com.sang.law.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 import java.util.UUID;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -40,5 +45,35 @@ public class UserController {
     @RequestMapping("/updateUser") //修改
     public boolean updateUser(@RequestBody User user) {
         return userService.updateUser(user);
+    }
+
+    @RequestMapping("/getpic")
+    public void getPicById(final HttpServletResponse response, String id) throws IOException {
+        User user = userService.getUser(id);
+        byte[] data = user.getPic();
+        response.setContentType("image/jpeg");
+        response.setCharacterEncoding("UTF-8");
+        OutputStream os = response.getOutputStream();
+        InputStream in = new ByteArrayInputStream(data);
+        int len = 0;
+        byte[] buf = new byte[1024];
+        while ((len = in.read(buf, 0, 1024)) != -1) {
+            os.write(buf, 0, len);
+        }
+        os.close();
+    }
+
+    @RequestMapping("/savepic")
+    public String savePic(@RequestBody User user, @RequestParam("file") MultipartFile file) {
+        try {
+            InputStream is = file.getInputStream();
+            byte[] pic = new byte[(int) file.getSize()];
+            is.read(pic);
+            user.setPic(pic);
+            userService.updateUser(user);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "success";
     }
 }

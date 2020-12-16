@@ -23,4 +23,7 @@ public interface UserDao {
 
     @Update("update users set username=#{username},password=#{password},nickname=#{nickname},type=#{type} where id=#{id}")
     boolean updateUser(User user);
+
+    @Select("select * from users where id=#{id}")
+    User findUserById(String id);
 }

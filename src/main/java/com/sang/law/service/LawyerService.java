@@ -12,6 +12,8 @@ public interface LawyerService {
 
     boolean deleteLawyerById(String id);
 
+    Lawyer getLawyer(String id);
+
     Lawyer loginLawyer(String lawyer_username, String lawyer_password);
 
     boolean updateLawyer(Lawyer lawyer);

@@ -29,6 +29,11 @@ public class LawyerServicelmpl implements LawyerService {
     }
 
     @Override
+    public Lawyer getLawyer(String id) {
+        return lawyerDao.findLawyerById(id);
+    }
+
+    @Override
     public Lawyer loginLawyer(String lawyer_username, String lawyer_password) {
         return lawyerDao.loginLawyer(lawyer_username, lawyer_password);
     }
