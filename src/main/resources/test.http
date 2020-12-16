@@ -1,35 +1,36 @@
 ###
-POST http://localhost:8888/addUser
+POST http://localhost:8888/user/addUser
 Content-Type: application/json
 
 {
-  "username": "11",
+  "username": "51",
   "password": "content",
   "nickname": "11",
   "type": "11"
 }
 
 ###
-PUT http://localhost:8888/updateUser
+PUT http://localhost:8888/user/updateUser
 Content-Type: application/json
 
 {
   "id": "11",
-  "username": "00",
+  "username": "55",
   "password": "00",
   "nickname": "00",
   "type": "00"
 }
+###
+GET http://localhost:8888/user/login?username=11&password=111
 
 ###
-DELETE http://localhost:8888/deleteUserById?id=7d338cc1-7bb2-4a1b-aa81-d9c2f2193be1
+DELETE http://localhost:8888/user/deleteUserById?id=11
 
 ###
 POST http://localhost:8888/lawyer/addLawyer
 Content-Type: application/json
 
 {
-  "id": "12",
   "lawyer_username": "1",
   "lawyer_password": "161",
   "name": "1",
@@ -52,7 +53,7 @@ Content-Type: application/json
 
 {
   "id": "1",
-  "lawyer_username": "11111",
+  "lawyer_username": "51111",
   "lawyer_password": "161",
   "name": "11111",
   "age": "10",
@@ -65,6 +66,44 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:8888/lawyer/deleteLawyerById?id=332dc9bd-ac9f-48fb-a50d-017804300230
+DELETE http://localhost:8888/lawyer/deleteLawyerById?id=1
+
+###
+PUT http://localhost:8888/order/addOrder
+Content-Type: application/json
+
+{
+  "user_id": "15",
+  "user_name": "15",
+  "lawyer_id": "15",
+  "lawyer_name": "15",
+  "order_descrip": "15",
+  "order_type": "15",
+  "done": "true",
+  "start": "2020-12-15",
+  "end": "2020-12-16"
+}
+###
+PUT http://localhost:8888/order/findAllOrder
+Content-Type: application/json
+###
+DELETE http://localhost:8888/order/deleteOrderById?order_id=1
+###
+PUT http://localhost:8888/order/updateOrder
+Content-Type: application/json
+
+{
+  "order_id": "9395a5d3-c791-41fa-a736-4d7e4402876c",
+  "user_id": "55",
+  "user_name": "15",
+  "lawyer_id": "15",
+  "lawyer_name": "15",
+  "order_descrip": "15",
+  "order_type": "15",
+  "done": "true",
+  "start": "2020-12-15",
+  "end": "2020-12-16"
+}
+
 
 
