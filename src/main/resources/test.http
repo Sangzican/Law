@@ -4,9 +4,10 @@ Content-Type: application/json
 
 {
   "username": "51",
-  "password": "content",
+  "password": "123456",
   "nickname": "11",
-  "type": "11"
+  "type": "11",
+  "pic": ""
 }
 
 ###
@@ -31,7 +32,7 @@ POST http://localhost:8888/lawyer/addLawyer
 Content-Type: application/json
 
 {
-  "lawyer_username": "1",
+  "lawyer_username": "11111",
   "lawyer_password": "161",
   "name": "1",
   "age": "10",
@@ -40,7 +41,9 @@ Content-Type: application/json
   "cases": "10",
   "descrip": "111",
   "free": "true",
-  "casetype": "151"
+  "casetype": "151",
+  "pic": "",
+  "company": ""
 }
 
 ###
@@ -52,7 +55,7 @@ PUT http://localhost:8888/lawyer/updateLawyer
 Content-Type: application/json
 
 {
-  "id": "1",
+  "id": "1bc23394-dc82-4b6f-b865-b6e69fa2010a",
   "lawyer_username": "51111",
   "lawyer_password": "161",
   "name": "11111",
@@ -62,11 +65,12 @@ Content-Type: application/json
   "cases": "10",
   "descrip": "111",
   "free": "true",
-  "casetype": "151"
+  "casetype": "151",
+  "company": "111"
 }
 
 ###
-DELETE http://localhost:8888/lawyer/deleteLawyerById?id=1
+DELETE http://localhost:8888/lawyer/deleteLawyerById?id=1bc23394-dc82-4b6f-b865-b6e69fa2010a
 
 ###
 PUT http://localhost:8888/order/addOrder

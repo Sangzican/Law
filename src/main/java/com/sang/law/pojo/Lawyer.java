@@ -20,4 +20,5 @@ public class Lawyer {
     private boolean free;
     private String casetype;
     private byte[] pic;
+    private String company;
 }
