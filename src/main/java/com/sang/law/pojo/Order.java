@@ -18,6 +18,6 @@ public class Order {
     private String order_descrip;
     private String order_type;
     private boolean done;
-    private Date start;
-    private Date end;
+    private String start;
+    private String end;
 }
