@@ -1,4 +1,6 @@
 ###
+GET http://localhost:8888/user/findAllUser
+###
 POST http://localhost:8888/user/addUser
 Content-Type: application/json
 

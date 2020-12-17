@@ -4,6 +4,7 @@ package com.sang.law.controller;
 import com.sang.law.pojo.Lawyer;
 
 import com.sang.law.service.LawyerService;
+import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -13,7 +14,6 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.List;
 import java.util.UUID;
 
 @CrossOrigin
@@ -24,8 +24,8 @@ public class LawyerController {
     private LawyerService lawyerService;
 
     @RequestMapping("/findAllLawyer")
-    public List<Lawyer> findALLLawyer() {
-        return lawyerService.findAllLawyer();
+    public String findALLLawyer() {
+        return new JSONArray(lawyerService.findAllLawyer()).toString();
     }
 
     @RequestMapping("/addLawyer")

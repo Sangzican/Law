@@ -1,7 +1,6 @@
 package com.sang.law.controller;
 
 import com.sang.law.pojo.Admin;
-import com.sang.law.pojo.Lawyer;
 import com.sang.law.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;

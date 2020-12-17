@@ -3,13 +3,13 @@ package com.sang.law.controller;
 
 import com.sang.law.pojo.Order;
 import com.sang.law.service.OrderService;
+import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 import java.util.UUID;
 
 @CrossOrigin
@@ -20,8 +20,8 @@ public class OrderController {
     private OrderService orderService;
 
     @RequestMapping("/findAllOrder") //查询所有
-    public List<Order> findAllOrder() {
-        return orderService.findAllOrder();
+    public String findAllOrder() {
+        return new JSONArray(orderService.findAllOrder()).toString();
     }
 
     @RequestMapping("/addOrder") //增加订单

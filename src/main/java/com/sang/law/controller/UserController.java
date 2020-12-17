@@ -2,6 +2,7 @@ package com.sang.law.controller;
 
 import com.sang.law.pojo.User;
 import com.sang.law.service.UserService;
+import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -11,7 +12,6 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.List;
 import java.util.UUID;
 
 @CrossOrigin
@@ -22,8 +22,9 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/findAllUser") //查询所有
-    public List<User> findAllUser() {
-        return userService.findAllUser();
+    public String findAllUser() {
+        return new JSONArray(userService.findAllUser()).toString();
+
     }
 
     @RequestMapping("/addUser") //增加用户
